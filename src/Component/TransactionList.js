@@ -4,6 +4,7 @@ import { TransContext } from "../Global State/transContext";
 
 export const TransactionList = () => {
    let { Transaction } = useContext(TransContext);
+
    return (
       <div>
          <ul className="transaction-list">

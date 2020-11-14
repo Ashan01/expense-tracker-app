@@ -11,14 +11,14 @@ import { TransProvider } from "./Global State/transContext";
 function App() {
    return (
       <div className="Container">
-         <Header />
-         <Balance />
-         <ExpenseCounter />
-         <History />
          <TransProvider>
+            <Header />
+            <Balance />
+            <ExpenseCounter />
+            <History />
             <TransactionList />
+            <AddTransaction />
          </TransProvider>
-         <AddTransaction />
       </div>
    );
 }

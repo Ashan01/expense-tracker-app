@@ -1,11 +1,35 @@
-import React from 'react'
-import '../App.css'
+import React, { useContext } from "react";
+import "../App.css";
+import { TransContext } from "../Global State/transContext";
 
 export const ExpenseCounter = () => {
-    return (
-        <div className='expense-container'>
-            <h4>Income <br/> $5000</h4>
-            <h4>Expense <br/> $2400</h4>     
-        </div>
-    )
-}
+   let { Transaction, add_Transaction } = useContext(TransContext);
+   console.log("Transaction==>", Transaction);
+
+   const getIncome = () => {
+      let income = 0;
+      for (var i = 0; i < Transaction.length; i++) {
+         if (Transaction[i].amount > 0) income += Transaction[i].amount;
+      }
+      return income;
+   };
+
+   const getExpense = () => {
+      let expense = 0;
+      for (var i = 0; i < Transaction.length; i++) {
+         if (Transaction[i].amount < 0) expense += Transaction[i].amount;
+      }
+      return expense;
+   };
+
+   return (
+      <div className="expense-container">
+         <h4>
+            Income <br /> {getIncome()}
+         </h4>
+         <h4>
+            Expense <br /> {getExpense()}
+         </h4>
+      </div>
+   );
+};
