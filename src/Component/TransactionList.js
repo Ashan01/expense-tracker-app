@@ -1,23 +1,21 @@
-import React from 'react'
-import '../App.css'
+import React, { useContext } from "react";
+import "../App.css";
+import { TransContext } from "../Global State/transContext";
 
 export const TransactionList = () => {
-    return (
-        <div>
-            <ul className='transaction-list'>
-                <li>
-                    <span>Cash</span>
-                    <span>500</span>
-                </li>
-                <li>
-                    <span>Book</span>
-                    <span>-200</span>
-                </li>
-                <li>
-                    <span>Camera</span>
-                    <span>-290</span>
-                </li>
-            </ul>
-        </div>
-    )
-}
+   let { Transaction } = useContext(TransContext);
+   return (
+      <div>
+         <ul className="transaction-list">
+            {Transaction.map((Obj, ind) => {
+               return (
+                  <li key={ind}>
+                     <span>{Obj.desc}</span>
+                     <span>{Obj.amount}</span>
+                  </li>
+               );
+            })}
+         </ul>
+      </div>
+   );
+};
