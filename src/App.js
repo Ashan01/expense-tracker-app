@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Header } from "./Component/Header";
-import { Balance } from "./Component/Balance";
+// import { Balance } from "./Component/Balance";
 import { ExpenseCounter } from "./Component/ExpenseCounter";
 import { History } from "./Component/History";
 import { TransactionList } from "./Component/TransactionList";
@@ -13,7 +13,7 @@ function App() {
       <div className="Container">
          <TransProvider>
             <Header />
-            <Balance />
+            {/* <Balance /> */}
             <ExpenseCounter />
             <History />
             <TransactionList />

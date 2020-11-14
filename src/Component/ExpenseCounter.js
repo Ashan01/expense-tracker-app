@@ -3,7 +3,7 @@ import "../App.css";
 import { TransContext } from "../Global State/transContext";
 
 export const ExpenseCounter = () => {
-   let { Transaction, add_Transaction } = useContext(TransContext);
+   let { Transaction } = useContext(TransContext);
    console.log("Transaction==>", Transaction);
 
    const getIncome = () => {
@@ -23,13 +23,19 @@ export const ExpenseCounter = () => {
    };
 
    return (
-      <div className="expense-container">
-         <h4>
-            Income <br /> {getIncome()}
-         </h4>
-         <h4>
-            Expense <br /> {getExpense()}
-         </h4>
+      <div>
+         <h3 className="padding">
+            Your Balance <br />
+            {getIncome() + getExpense()}
+         </h3>
+         <div className="expense-container">
+            <h4>
+               Income <br /> {getIncome()}
+            </h4>
+            <h4>
+               Expense <br /> {+getExpense()}
+            </h4>
+         </div>
       </div>
    );
 };
