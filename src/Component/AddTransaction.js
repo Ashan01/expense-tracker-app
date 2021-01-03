@@ -1,33 +1,33 @@
-import React, { useState, useContext } from "react";
-import { TransContext } from "../Global State/transContext";
+import React, { useContext, useState } from "react";
+import { transactionContext } from "../Global State/transContext";
 
 export const AddTransaction = () => {
-   let { add_Transaction } = useContext(TransContext);
-
+   let { addTransaction } = useContext(transactionContext);
    let [newDesc, setDesc] = useState("");
    let [newAmount, setAmount] = useState(0);
 
-   const handleAddition = (ev) => {
-      ev.preventDefault();
-      add_Transaction({
+   const handleChange = (e) => {
+      e.preventDefault();
+      addTransaction({
          amount: Number(newAmount),
          desc: newDesc,
       });
    };
+
    return (
       <div>
          <h3 className="padding">Add Transaction</h3>
          <hr />
 
-         <form onSubmit={handleAddition}>
+         <form onSubmit={handleChange}>
             <label>Text</label>
             <br />
-            <input className="form-element" onChange={(ev) => setDesc(ev.target.value)} required />
+            <input className="form-element" onChange={(e) => setDesc(e.target.value)} required />
             <br />
             <br />
             <label>Amount</label>
             <br />
-            <input type="number" className="form-element" onChange={(ev) => setAmount(ev.target.value)} required />
+            <input type="number" className="form-element" onChange={(e) => setAmount(e.target.value)} required />
             <br />
             <br />
             <button className="form-element">Add Transaction</button>

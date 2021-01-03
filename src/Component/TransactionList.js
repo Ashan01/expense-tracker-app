@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import "../App.css";
-import { TransContext } from "../Global State/transContext";
+import { transactionContext } from "../Global State/transContext";
 
 export const TransactionList = () => {
-   let { Transaction } = useContext(TransContext);
+   let { Transaction } = useContext(transactionContext);
 
    return (
       <div>

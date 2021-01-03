@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import "../App.css";
-import { TransContext } from "../Global State/transContext";
+import { transactionContext } from "../Global State/transContext";
 
 export const ExpenseCounter = () => {
-   let { Transaction } = useContext(TransContext);
-   console.log("Transaction==>", Transaction);
+   let { Transaction } = useContext(transactionContext);
 
    const getIncome = () => {
       let income = 0;
@@ -13,7 +12,6 @@ export const ExpenseCounter = () => {
       }
       return income;
    };
-
    const getExpense = () => {
       let expense = 0;
       for (var i = 0; i < Transaction.length; i++) {
@@ -25,15 +23,14 @@ export const ExpenseCounter = () => {
    return (
       <div>
          <h3 className="padding">
-            Your Balance <br />
-            {getIncome() + getExpense()}
+            Your Balance <br /> {getIncome() + getExpense()}
          </h3>
          <div className="expense-container">
             <h4>
                Income <br /> {getIncome()}
             </h4>
             <h4>
-               Expense <br /> {+getExpense()}
+               Expense <br /> {getExpense()}
             </h4>
          </div>
       </div>
