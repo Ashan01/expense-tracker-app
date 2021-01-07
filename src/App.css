@@ -1,31 +1,39 @@
 .Container {
-  margin: 0 auto;
-  max-width: 400px;
-  background-color: #eeffee;
+   margin: 0 auto;
+   margin-bottom: 20px;
+   margin-top: 20px;
+   max-width: 400px;
+   background-color: #eeffee;
 }
 .header {
-  text-align: center;
-  padding-top: 20px;
+   text-align: center;
+   padding-top: 20px;
 }
 .expense-container {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  margin: 0 20px;
+   display: flex;
+   justify-content: space-around;
+   background-color: white;
+   margin: 0 20px;
 }
 .padding {
-  margin-left: 20px;
+   margin-left: 20px;
 }
-.form-element{
-  width: 98%;
-  padding: 10px 0;
+.form-element {
+   width: 98%;
+   padding: 10px 0;
 }
-.transaction-list{
-  margin: 0;
-  padding: 0;
+.transaction-list {
+   margin: 20px;
 }
 
 .transaction-list li {
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
+}
+.addBtn {
+   width: 98%;
+   border: none;
+   margin-bottom: 10px;
+   height: 50px;
+   padding: 20px;
 }

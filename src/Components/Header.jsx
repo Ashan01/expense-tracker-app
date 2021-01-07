@@ -1,10 +1,9 @@
 import React from "react";
-import "../App.css";
 
 export const Header = () => {
    return (
-      <div>
-         <h3 className="header">Expense Tracker App</h3>
+      <div className="header">
+         <h1>Expense Tracker App</h1>
       </div>
    );
 };

@@ -1,21 +1,20 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./Component/Header";
-import { ExpenseCounter } from "./Component/ExpenseCounter";
-import { History } from "./Component/History";
-import { TransactionList } from "./Component/TransactionList";
-import { AddTransaction } from "./Component/AddTransaction";
-import { TransactionProvider } from "./Global State/transContext";
+import { Header } from "./Components/Header";
+import { Balance } from "./Components/Balance";
+import { TransactionsList } from "./Components/TransactionsList";
+import { AddTransaction } from "./Components/addTransaction";
+import { TransProvider } from "./Global States/transContext";
+
 function App() {
    return (
       <div className="Container">
-         <TransactionProvider>
+         <TransProvider>
             <Header />
-            <ExpenseCounter />
-            <History />
-            <TransactionList />
+            <Balance />
+            <TransactionsList />
             <AddTransaction />
-         </TransactionProvider>
+         </TransProvider>
       </div>
    );
 }
