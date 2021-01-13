@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { TransContext } from "../Global States/transContext";
+import { TransContext } from "../States/transContext";
 
 export const AddTransaction = () => {
    let { addTransaction } = useContext(TransContext);

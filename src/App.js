@@ -1,20 +1,25 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./Components/Header";
-import { Balance } from "./Components/Balance";
-import { TransactionsList } from "./Components/TransactionsList";
-import { AddTransaction } from "./Components/addTransaction";
-import { TransProvider } from "./Global States/transContext";
+
+import { initNotification } from "./Services/serviceWorker";
+
+// import { Header } from "./Components/Header";
+// import { Balance } from "./Components/Balance";
+// import { TransactionsList } from "./Components/TransactionsList";
+// import { AddTransaction } from "./Components/addTransaction";
+// import { TransProvider } from "./States/transContext";
 
 function App() {
    return (
       <div className="Container">
-         <TransProvider>
+         {/* <TransProvider>
             <Header />
             <Balance />
             <TransactionsList />
             <AddTransaction />
-         </TransProvider>
+         </TransProvider> */}
+         <h1>Hello World</h1>
+         <button onClick={initNotification}>Configure</button>
       </div>
    );
 }
