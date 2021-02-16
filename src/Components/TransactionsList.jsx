@@ -2,19 +2,19 @@ import React, { useContext } from "react";
 import { TransContext } from "../States/transContext";
 
 export const TransactionsList = () => {
-   let { Transaction } = useContext(TransContext);
-
+   const { Transaction } = useContext(TransContext);
+   console.log(Transaction);
    return (
       <div>
          <div className="padding">
             <h2>Transactions List</h2>
          </div>
          <div className="transaction-list padding">
-            {Transaction.map((val, ind) => {
+            {Transaction.map((obj, ind) => {
                return (
                   <li key={ind}>
-                     <span>{val.desc}</span>
-                     <span>{val.amount}</span>
+                     <span>{obj.desc}</span>
+                     <span>{obj.amount}</span>
                   </li>
                );
             })}

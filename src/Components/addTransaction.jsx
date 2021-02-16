@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useContext } from "react";
 import { TransContext } from "../States/transContext";
 
 export const AddTransaction = () => {
@@ -6,28 +6,40 @@ export const AddTransaction = () => {
    let [desc, setDesc] = useState("");
    let [amount, setAmount] = useState(0);
 
-   function handleChange(e) {
+   const handleSubmit = (e) => {
+      console.log(desc, amount);
       e.preventDefault();
       addTransaction({
-         desc: desc,
          amount: Number(amount),
+         desc,
       });
-   }
-
+   };
    return (
       <div className="padding">
-         <form onSubmit={handleChange}>
+         <form>
             <label>Text</label>
             <br />
-            <input type="text" className="form-element" onChange={(e) => setDesc(e.target.value)} />
+            <input
+               type="text"
+               required
+               className="form-element"
+               onChange={(e) => setDesc(e.target.value)}
+            />
             <br />
             <br />
             <label>Amount</label>
             <br />
-            <input type="number" className="form-element" onChange={(e) => setAmount(e.target.value)} />
+            <input
+               type="number"
+               required
+               className="form-element"
+               onChange={(e) => setAmount(e.target.value)}
+            />
             <br />
             <br />
-            <button className="addBtn">Add Transaction</button>
+            <button className="addBtn" onClick={handleSubmit}>
+               Add Transaction
+            </button>
          </form>
       </div>
    );

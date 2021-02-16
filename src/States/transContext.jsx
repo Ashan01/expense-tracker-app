@@ -1,19 +1,19 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import { TransReducer } from "./transReducer";
 
-const initialTransaction = [
-   { desc: "Cash", amount: 5000 },
-   { desc: "Camera", amount: -6000 },
-   { desc: "Bills", amount: -7000 },
+let initialTransition = [
+   { amount: 12000, desc: "Investment" },
+   { amount: -7000, desc: "Bills" },
+   { amount: 20000, desc: "Salary" },
 ];
 
-export let TransContext = createContext(initialTransaction);
+export const TransContext = createContext(initialTransition);
 
 export const TransProvider = ({ children }) => {
-   let [state, dispatch] = useReducer(TransReducer, initialTransaction);
+   let [state, dispatch] = useReducer(TransReducer, initialTransition);
 
    function addTransaction(obj) {
-      dispatch({
+      return dispatch({
          type: "ADD_TRANSACTION",
          payload: {
             amount: obj.amount,
@@ -22,12 +22,7 @@ export const TransProvider = ({ children }) => {
       });
    }
    return (
-      <TransContext.Provider
-         value={{
-            Transaction: state,
-            addTransaction,
-         }}
-      >
+      <TransContext.Provider value={{ Transaction: state, addTransaction }}>
          {children}
       </TransContext.Provider>
    );
