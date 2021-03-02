@@ -25,8 +25,8 @@ export const Balance = () => {
    return (
       <div>
          <div className="padding">
-            <h3>Balance</h3>
-            <h3>{`$ ${getIncome() + getExpense()}`}</h3>
+            <h2>Balance</h2>
+            <h2>{`$ ${getIncome() + getExpense()}`}</h2>
          </div>
          <br />
          <div className="expense-container">
